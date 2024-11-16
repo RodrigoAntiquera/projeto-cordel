@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Sriracha&display=swap'); /*importei o estilo do google fonts na aba import */
+
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap'); /*importei o estilo do google fonts na aba import */
+
+:root { /* "-- "é o simbolo da variavel no CSS e tem que ser declarada no root pra disponibilizar em todo o documento*/
+    --fonte1:Verdana, Geneva, Tahoma, sans-serif;
+    --fonte2:'Passion One', 'cursive';
+    --fonte3:'Sriracha', 'cursive'
+}
+
+* { /* O * são as configurações globais, vale pra todo o documento.*/
+    margin: 0px;
+    padding: 0px;
+    font-size: 1em;
+}
+
+html, body {
+    min-height: 100vh; /*tamanho máximo da viewport height(altura) */
+    background-color: rgb(22, 18, 18);
+    font-family: var(--fonte1); /* uso var(--exemplo1) pra usar a variavel que criei no root.*/
+}
+
+header {
+    background-color: black;
+    color: white;
+    text-align: center; /* centralizar texto inline level*/
+}
+
+header > h1 {
+    padding-top:50px;
+    font-variant: small-caps; /*deixam todas maiusculas, porem com a fonte um pouco menor, mais driscreto */
+
+    /*text-transform: uppercase; transforma tudo em letra maiuscula mas pode ficar exagerado dependendo do contexto*/
+    font-size:10vw; /*viewport width- 10% da largura total e se adapta ao espremer a tela*/
+    font-family: var(--fonte2);
+}
+
+header > p {
+    padding-bottom:50px; 
+}
+
+header a, footer a {
+    color: white;
+    text-decoration: none; /*tiro firulas do texto*/
+    font-weight: bolder ; /*negrito */
+
+}
+
+header a:hover, footer a:hover { /*pseudoclasse (:) hover(efeito ao passar o mouse em cima) no header e footer */
+    text-decoration: underline; /* enfeito o texto */
+}
+
+section.normal { /* na section de classe normal*/
+    background-color: white;
+}
+section {
+    padding-top: 10vh; /* 10% do tamanho da viewport*/
+    padding-bottom: 10vh;
+    line-height: 2em; /* dobrei o espaçamento entre linha padrão*/
+    padding-left: 30px;
+    font-family: var(--fonte3);
+    font-size:3.5vw;
+}
+section > p {
+    padding-bottom: 2em;
+}
+
+section.normal { /* section da classe normal*/
+    background-color: white;
+    color: black;
+}
+
+section.imagem {
+    background-color:rgb(41, 41, 41);
+    color: white;
+    box-shadow: inset 6px 6px 13px /0px rgba(0, 0, 0, 473.795); /* inset é pra deixar a sombra interna. horizontal, vertical, desfoque da sombra, quanto maior o numero mais suave e difusa , tamanho sombra, cor*/
+
+    background-size: cover; /* A propriedade background-size: cover; é usada para ajustar como a imagem de fundo (background-image) é redimensionada dentro de um elemento mantendo a proporção original. */
+
+    background-attachment: fixed; /*efeito paralax, enquanto rolo a pagina pra baixa as imagens ficam estáticas. */
+
+}
+
+section.imagem > p {
+    display: inline-block; /* transformei em inline pra ele englobar somente ate onde acaba a linha do verso*/
+    background-color: rgba(0, 0, 0, 0.514);
+    padding: 5px;
+    text-shadow: 1px 1px 0px black;
+
+}
+section#img01 { /* a # NO CSS É O ID DO HTML QUE PODE SER COLOCADO DENTRO DE UMA CLASSE.*/
+    background-image: url(../imagens/background001.jpg);
+    /* um ponto significa na pasta atual, dois pontos significa na pasta dentro dela, e barra serve pra abrir a que direcionei*/
+    background-position: center center; /*posicionei baseado no conteudo do centro da imagem, posso usar duas medidas tipo left top , vai depender da imagem. */
+    
+}
+
+section#img02 {
+    background-image:url(../imagens/background002.jpg);
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
